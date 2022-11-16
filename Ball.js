@@ -3,12 +3,16 @@
 const game    = document.querySelector('#game');
 
 export default class Ball {
-    constructor() {
+    constructor(name) {
 
         let taille = 20 + rand(150);
         let ball = document.createElement('div')
-        
         ball.classList.add('ball')
+        ball.style.display = "flex"
+        ball.style.justifyContent = "center"
+        ball.style.alignItems = "center"
+        ball.innerHTML = name
+        ball.style.fontSize = taille / 4 + "px"
       
         // ball.style.backgroundColor = `rgb(${100 + rand(155)},${100 + rand(155)},${100 + rand(155)})`
         let numBall = 1 + rand(8);
@@ -19,7 +23,6 @@ export default class Ball {
         ball.style.borderRadius = "50%"
         ball.style.position = "absolute"
         
-       
         game.appendChild(ball);
 
        let posX = rand(game.clientWidth - taille)
@@ -27,7 +30,12 @@ export default class Ball {
 
        this.ball = ball
        this.r = 0
-       this.vx = 30
+       this.vx = 20 + rand(20)
+
+       let direction = rand(2)
+       
+       if (direction == 0) { this.vx = - this.vx}
+
        this.gy = 1
        this.m =  Math.round(taille / 20)
 
@@ -42,7 +50,7 @@ export default class Ball {
 
     move() {
 
-        this.r = this.r + this.vx
+        this.r = this.r + (this.vx / (this.ball.clientWidth / 100))
 
         if (this.r > 360) {this.r = 1}
         if (this.r < 1) {this.r = 360}
@@ -53,17 +61,11 @@ export default class Ball {
         if (this.vx > 0) {
             this.vx = this.vx - 0.05
             if (this.vx < 0) { this.vx = 0}
-            // this.ball.classList.remove('r-right')
-            // this.ball.classList.remove('r-left')
             
         } else if (this.vx < 0) {
             this.vx = this.vx + 0.05
             if (this.vx > 0) { this.vx = 0}
-            // this.ball.classList.remove('r-right')
-            // this.ball.classList.remove('r-left')
         }
-
-        console.log(this.vx)
 
         this.x = this.x + this.vx
 
@@ -87,7 +89,7 @@ export default class Ball {
            
             this.y = this.y_max
             this.py = - this.py
-            // console.log("Gravity", this.p)
+
         }
 
         this.draw()

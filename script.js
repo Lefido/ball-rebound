@@ -22,7 +22,7 @@ let nbBall = 5;
 // }, 10000)
 
 document.body.addEventListener('click', () => {
-    let ball = new Ball();
+    let ball = new Ball(tabBall.length + 1);
     tabBall.push(ball);
 })
 
