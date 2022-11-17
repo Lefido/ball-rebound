@@ -31,14 +31,15 @@ body{
 
   .commande {
     width: 100%;
+    height: 25%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
-    position: absolute;
     left: 50%;
     top: 8%;
-    transform: translate(-50%, -50%);
     transition: 2s;
+    padding: 20px
 
   }
 
