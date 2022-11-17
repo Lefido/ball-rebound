@@ -15,7 +15,7 @@ export default class Ball {
         ball.style.fontSize = taille / 4 + "px"
       
         // ball.style.backgroundColor = `rgb(${100 + rand(155)},${100 + rand(155)},${100 + rand(155)})`
-        let numBall = 1 + rand(8);
+        let numBall = 1 + rand(11);
         // console.log(numBall)
         ball.style.background =  `url('assets/ball_${numBall}.png') center / cover`
         ball.style.width = taille + "px"
