@@ -38,6 +38,7 @@ body{
     left: 50%;
     top: 8%;
     transform: translate(-50%, -50%);
+    transition: 2s;
 
   }
 
@@ -66,6 +67,30 @@ body{
     box-shadow: 0 0 50px 5px blue;
 
   }
+
+  .remove-ball {
+    display: none;
+  }
+
+  .secouer {
+    
+   rotate: 1turn;
+
+  }
+
+  /* @keyframes tourner {
+    0%{
+      scale: 0;
+    }
+    50%{
+      rotate: (1turn);
+    }
+    100%{
+      scale: 0;
+    }
+
+   } */
+
 
   @keyframes lefido {
     0%{

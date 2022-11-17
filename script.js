@@ -8,15 +8,25 @@ import Ball from "./Ball.js";
 var tabBall = [];
 
 let button_add_ball = document.querySelector('.add-ball');
+let button_remove_ball= document.querySelector('.remove-ball');
 
 button_add_ball.addEventListener('click', () => {
     let ball = new Ball(tabBall.length + 1);
     tabBall.push(ball);
+    button_remove_ball.style.display = "block";
 })
 
-let button_remove_ball= document.querySelector('.remove-ball');
+
 
 button_remove_ball.addEventListener('click', () => {
+
+    if (tabBall.length != 0 ) {
+
+        button_remove_ball.classList.add("secouer")
+        setTimeout(function() {button_remove_ball.classList.remove("secouer")}, 250);
+        
+    }
+
    
     let all_ball = document.querySelectorAll('.ball');
     all_ball.forEach((ball) => {
@@ -24,6 +34,8 @@ button_remove_ball.addEventListener('click', () => {
     })
 
     tabBall = []
+
+    button_remove_ball.style.display = "none";
 
 })
 
