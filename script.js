@@ -5,35 +5,34 @@ const game    = document.querySelector('#game')
 
 import Ball from "./Ball.js";
 
-
 var tabBall = [];
-let nbBall = 5;
 
-// for (let i = 0; i < nbBall; i++) {
+let button_add_ball = document.querySelector('.add-ball');
 
-    // let ball = new Ball();
-    // tabBall.push(ball);
-
-// }
-
-// setInterval(function(){
-//     let ball = new Ball();
-//     tabBall.push(ball);
-// }, 10000)
-
-document.body.addEventListener('click', () => {
+button_add_ball.addEventListener('click', () => {
     let ball = new Ball(tabBall.length + 1);
     tabBall.push(ball);
 })
 
+let button_remove_ball= document.querySelector('.remove-ball');
+
+button_remove_ball.addEventListener('click', () => {
+   
+    let all_ball = document.querySelectorAll('.ball');
+    all_ball.forEach((ball) => {
+        ball.remove();
+    })
+
+    tabBall = []
+
+})
 
 setInterval(running, 1000/60);
 
 function running() {
 
-    ball_move()
+    ball_move();
 
-   
 }
 
 function ball_move() {
@@ -41,15 +40,7 @@ function ball_move() {
     tabBall.forEach((ball, id) => {
        
         ball.move();
-       
-        // if (ball.p === -0) {
-          
-        // }
-
-       
-
+        
     })
 
-
 }
-

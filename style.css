@@ -29,28 +29,53 @@ body{
 
   }
 
-  #game h1 {
-    color: white;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%,-50%);
+  .commande {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     position: absolute;
+    left: 50%;
+    top: 8%;
+    transform: translate(-50%, -50%);
+
+  }
+
+
+  #game button {
+    width: 210px;
+    padding: 20px;
+    color: white;
     text-transform: uppercase;
     text-shadow: 0 0 10px blue;
-
     animation: lefido 1.5s linear infinite;
-    transform-origin: left;
+    transform-origin: center;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    transition: 0.2s;
     
+  }
+
+
+  #game button:hover {
+  
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.5;
+
   }
 
   @keyframes lefido {
     0%{
       text-shadow: 0 0 5px white;
+     
     }
    
     50%{
       text-shadow: 0 0 30px white;
-      scale: 1.2;
+      scale: 1.1;
+      box-shadow: 0 0 5px 5px gray
     }
     100%{
       text-shadow: 0 0 5px white;

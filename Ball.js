@@ -11,7 +11,7 @@ export default class Ball {
         ball.style.display = "flex"
         ball.style.justifyContent = "center"
         ball.style.alignItems = "center"
-        ball.innerHTML = name
+        // ball.innerHTML = name
         ball.style.fontSize = taille / 4 + "px"
       
         // ball.style.backgroundColor = `rgb(${100 + rand(155)},${100 + rand(155)},${100 + rand(155)})`
@@ -30,7 +30,7 @@ export default class Ball {
 
        this.ball = ball
        this.r = 0
-       this.vx = 20 + rand(20)
+       this.vx = 20 + rand(30)
 
        let direction = rand(2)
        
@@ -104,7 +104,6 @@ export default class Ball {
     }
 
 }
-
 
 function rand(value) {
 
